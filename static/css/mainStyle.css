@@ -1,0 +1,152 @@
+body {
+    font-family: Impact, monospace;
+}
+
+
+.main-head {
+    height: 100px;
+    background: whitesmoke;
+}
+
+.sidenav {
+
+    height: 100%;
+    background-image: linear-gradient(rgb(255, 255, 10),rgb(253, 255, 113));
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: whitesmoke;
+    overflow-x: hidden;
+    padding-top: 20px;
+    
+}
+
+.main {
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {
+    padding-top: 15px;
+    }
+}
+
+
+
+@media screen and (min-width: 770px)  {
+    .main {
+    margin-left: 40%;
+    }
+
+    .sidenav {
+    width: 35%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    }  
+
+} 
+
+
+
+.command-buttons{
+    display:grid;
+    grid-gap: 10px 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+
+.commands #up_button{  
+    grid-row: 1;
+    grid-column: 2/3;
+
+}
+
+.commands #left_button{
+    grid-row: 2/3;
+    grid-column:1/3;
+}
+
+.commands #right_button{
+     grid-row: 2/3 ; 
+     grid-column:3/3;       
+
+}
+
+.commands #down_button{ 
+     grid-row: 3/3;
+     grid-column: 2/3;
+}        
+
+
+
+button {  
+
+    
+    margin: 5px;
+    padding: 0 12px;
+    border: 0;
+    line-height: 28px;
+    cursor: pointer;
+    color: #fff;
+    background: #000000;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: 0;
+    margin-top:30px;
+}
+
+.login-main-text {
+    margin-top: 10px;
+    padding: 40px;
+    color: #000;
+}
+
+.login-main-text h2 {
+    font-weight: 300;
+}
+
+
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.image-container {
+    position: relative;
+    min-width: 160px
+}
+
+
+
+.range-max,.range-min {
+    display: inline-block;
+    padding: 0 5px;
+  
+}
+
+.speed-input{
+    margin-left:70px ;
+}
+
+
+.form-inline {
+    display: inline-block;
+    flex-flow: row wrap;
+    align-items: center;
+    margin-top:-25px;
+	
+  }
+
+
+.insert-message{
+    margin-top:30px;
+}
+
+
+
+
+

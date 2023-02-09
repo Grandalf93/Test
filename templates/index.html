@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>      
+         
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">         
+        <link rel="stylesheet" href="../static/css/mainStyle.css" type="text/css">
+
+    </head>
+
+    <body>
+        <div class="sidenav">
+            <div class="login-main-text">
+                <h2>COMANDO DE CONTROL Y CONFIGURACIÓN</h2>                    
+            </div>
+
+            <section class="commands" >
+                <div class="command-buttons" id="buttons">
+                    <input type="image" src="https://static.thenounproject.com/png/1384177-200.png" id="up_button" height="110" width="110"/>
+                    <input type="image" src="https://static.thenounproject.com/png/1384175-200.png" id="left_button" height="110" width="110"/>
+                    <input type="image" src="https://static.thenounproject.com/png/1384180-200.png" id="right_button" height="110" width="110"/>       
+                    <input type="image" src="https://static.thenounproject.com/png/1384181-200.png" id="down_button" height="110" width="110"/>
+                </div>
+                
+                <div class="speed-input" id="speed-group">
+                    <label for="speed">Velocidad</label>
+                    <div class="range-min">0</div>
+                    <input type="range" id="speed" min="0%" max="100%" value="50%" class="default-action">
+                    <div class="range-max">100%</div>     
+                </div>
+                    
+                  
+                <p class="insert-message" id="text-head">Ingrese mensaje</p>               
+               
+                    <form class="form-inline" id="tts-form">                                     
+                        <input type="text" class="form-control mb-2 " name="message" id="message" placeholder="Mensaje" maxlength="300" size="40" >                  
+                        <button type="submit" id="submit-button" class="btn btn-primary mb-2">Enviar</button>           
+                    </form>               
+
+                
+
+            </section>
+
+            <section id="buttons">
+                <button id="toggle-stream">Start Stream</button>
+                <!--Agregar botón de audio-->
+            </section>
+
+
+            
+        </div>
+
+        <div class="main">
+            <div class="col" >
+                <figure>
+                    <div class="stream-container hidden" id="stream-container">
+                        <img id="stream" src="{{ url_for('stream_video') }}">
+                    </div>
+                </figure>
+            </div>  
+        </div>
+
+
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>               
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="../static/js/main.js">         </script>        
+    </body>  
+</html>
