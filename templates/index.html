@@ -15,7 +15,7 @@
 
             <section class="commands" >
                 <div class="command-buttons" id="buttons">
-                    <input type="image" src="https://static.thenounproject.com/png/1384177-200.png" id="up_button" height="110" width="110"/>
+                    <input type="image" src="https://static.thenounproject.com/png/1384177-200.png " id="up_button" height="110" width="110"/>
                     <input type="image" src="https://static.thenounproject.com/png/1384175-200.png" id="left_button" height="110" width="110"/>
                     <input type="image" src="https://static.thenounproject.com/png/1384180-200.png" id="right_button" height="110" width="110"/>       
                     <input type="image" src="https://static.thenounproject.com/png/1384181-200.png" id="down_button" height="110" width="110"/>
@@ -39,14 +39,20 @@
                 
 
             </section>
+  
+            <!-- <div class="switch">
+                <a herf="{{ url_for('cellphone_index') }}">
+                    <input type="checkbox" id="switch__button--cellphone" />
+                    <label  class= "toggle_switch" for="switch__button--cellphone">Modalidad</label>
+                </a>
+            </div> -->
 
-            <section id="buttons">
-                <button id="toggle-stream">Start Stream</button>
-                <!--Agregar botón de audio-->
-            </section>
+            <div class="container__button--cellphone">
+                
+                <button class="btn btn-primary" onclick="window.location.href='/cell_interface';">Modo portátil</button>
+                
+            </div>
 
-
-            
         </div>
 
         <div class="main">

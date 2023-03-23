@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+    <head>      
+         
+        <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">         
+        <link rel="stylesheet" href="static/css/cellMainStyle.css" type="text/css">
+
+    </head>
+
+    <body>
+        <div class="sidenav__buttons--left">
+            
+            <div class="sidenav__buttons--head">
+                <h2>COMANDO DE CONTROL Y CONFIGURACIÓN</h2>                    
+            </div>
+
+            <section class="container__commands--left" >
+                <div class="container__buttons--left" id="buttons">
+                    <button type="submit" id="left_button">nol</button>
+                    <button type="submit" id="right_button">nol</button>    
+                </div>
+                
+                <div class="slider__input--speed" id="speed-group">
+                    <label for="speed">Velocidad</label>
+                    <div class="range-min">0</div>
+                    <input type="range" id="speed" min="0%" max="100%" value="50%" class="default-action">
+                    <div class="range-max">100%</div>     
+                </div>           
+            </section>
+
+        </div>
+
+        <div class="sidenav__buttons--right">
+            <div class="container__buttons--right">
+                <button type="submit"  id="up_button">nol</button>
+                <button type="submit"  id="down_button">nol</button>  
+            </div>            
+        </div>
+
+
+        <div class="main">
+            <div class="col" >
+                <figure>
+                    <div class="stream-container hidden" id="stream-container">
+                        <img id="stream" src="{{ url_for('stream_video') }}">
+                    </div>
+                </figure>
+            </div>  
+        </div>
+
+
+        <footer class="footer__form">
+            <p class="insert-message" id="text-head">Ingrese mensaje</p>            
+               
+                    <form class="form-inline" id="tts-form">                                     
+                        <input type="text" class="form-control mb-2 " name="message" id="message" placeholder="Mensaje" maxlength="300" size="40" >                  
+                        <button type="submit" id="submit-button" class="btn btn-primary mb-2">Enviar</button>           
+                     </form>            
+        </footer>
+
+        <!--<script src="js/login.js"></script>-->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>               
+        <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+        <script src="../static/js/cellMain.js">         </script>        
+    </body>  
+</html>

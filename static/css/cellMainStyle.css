@@ -1,0 +1,174 @@
+body {
+    font-family: Impact, monospace;  
+    user-select: none; 
+}
+
+
+.sidenav__buttons--left {
+    height: 100%;
+    background-image: linear-gradient(rgb(255, 255, 10),#fdff71);
+    background-repeat: repeat-x;
+    background-size: cover;
+    background-color: whitesmoke;
+    overflow-x: hidden;
+    padding-top: 20px;
+       
+}
+
+.sidenav__buttons--right{
+    height: 100%;       
+    background-image: linear-gradient(rgb(255, 255, 10),#fdff71);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: whitesmoke;
+    overflow-x: hidden;
+    padding-top: 20px;    
+    
+     
+}
+
+
+.sidenav__buttons--head{
+    text-align: center;
+}
+
+.main {
+    padding: 0px 10px;
+}
+
+
+
+@media screen and (max-height: 450px) {
+    .sidenav__buttons--left {
+    padding-top: 15px;
+    }
+}
+
+
+
+@media screen and (min-width: 770px)  {
+    .main {
+    margin-left: 40%;
+    }
+
+    .sidenav__buttons--left {
+    width: 20%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    } 
+
+    .sidenav__buttons--right{
+    width: 15%;        
+    position:fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    }
+} 
+
+.container__commands--left{
+    margin-left:auto;
+    margin-right:auto;   
+    margin-top: 50%;  
+}
+
+.container__buttons--left  {
+    display:grid;   
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr; 
+    vertical-align: middle;
+    margin-right:auto;
+}
+
+.container__buttons--left #left_button{
+    background-image: url('https://www.nicepng.com/png/detail/128-1287679_arrow-top-up-key-comments-server.png');
+    background-size:cover ;
+    height: 110px;
+    width: 110px;
+    grid-row: 1;
+    grid-column: 1/2;
+}
+
+.container__buttons--left #right_button{
+    background-image: url('https://www.nicepng.com/png/detail/128-1287679_arrow-top-up-key-comments-server.png');
+    background-size:cover ;
+    height: 110px;
+    width: 110px;        
+    grid-row: 1;
+    grid-column: 2/2;
+}
+
+.container__buttons--right{    
+    display:grid;   
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr; 
+    margin-top:150px;
+    margin-left: 20px;    
+}
+
+.container__buttons--right #up_button{
+    background-image: url('https://www.nicepng.com/png/detail/128-1287679_arrow-top-up-key-comments-server.png');
+    background-size:cover ;
+    height: 110px;
+    width: 110px;
+    grid-row: 1;
+    grid-column: 1;
+}
+
+.container__buttons--right #down_button{        
+    background-image: url('https://www.nicepng.com/png/detail/128-1287679_arrow-top-up-key-comments-server.png');
+    background-size:cover ;
+    height: 110px;
+    width: 110px;
+    grid-row: 2/2;
+    grid-column: 1;
+}
+
+
+
+.login-main-text {
+    margin-top: 10px;
+    padding: 40px;
+    color: #000;
+}
+
+.login-main-text h2 {
+    font-weight: 300;
+}
+
+
+figure img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 8px;
+}
+
+.image-container {
+    position: relative;
+    min-width: 160px
+}
+
+
+.range-max,.range-min {
+    display: inline-block;
+    padding: 0 5px;  
+}
+
+.footer__form{  
+    display:inline-block;
+    padding:1em 0;
+    background-color: #fdff71;
+    text-align:center;
+    bottom: 0;
+    width:100%;
+    position:absolute;
+}
+
+
+.insert-message{
+    margin-top:30px;
+}

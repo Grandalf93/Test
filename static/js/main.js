@@ -52,12 +52,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
     }
 
-    // navigator.mediaDevices.getUserMedia({
-    //         audio: true,
-    //         video: true
-    // }).then((stream) => {
-    //     console.log(stream)
-    // }).catch((error) => console.log(error))
+
 
     function updateConfig (el) {
         let value
@@ -103,46 +98,22 @@ document.addEventListener('DOMContentLoaded', function (event) {
         }
         })
 
-    //read initial values
-    // fetch(`${baseHost}/status`)
-    //     .then(function (response) {
-    //     return response.json()
-    //     })
-    //     .then(function (state) {
-    //     document
-    //         .querySelectorAll('.default-action')
-    //         .forEach(el => {
-    //         updateValue(el, state[el.id], false)
-    //         })
-    //     })
+    const cellphoneDisplay = document.getElementById("switch__button--cellphone");
+    const botonTest = document.getElementById("boton_prueba");
 
-    const view = document.getElementById('stream')
-    const viewContainer = document.getElementById('stream-container')     
-    const streamButton = document.getElementById('toggle-stream')
+    // if (cellphoneDisplay.checked){
+    //     alert("checked");
+    // }  
 
+    // botonTest.onclick = () =>{
+    //     const indexQuery = `${baseHost}/cell_interface`
+    //     fetch(indexQuery)
+    //     .then(response => {
+    //         console.log(`request to ${indexQuery} finished, status: ${response.status}`)
+    //     })  
 
+    // }
 
-
-    const startStream = () => {
-        view.src = `http://127.0.0.1:5000/stream`
-        show(viewContainer)
-        streamButton.innerHTML = 'Stop Stream'
-    }
-
-    const stopStream = () => {
-         window.stop();
-        streamButton.innerHTML = 'Start Stream'
-    }
-
-
-    streamButton.onclick = () => {
-        const streamEnabled = streamButton.innerHTML === 'Stop Stream'
-        if (streamEnabled) {
-        stopStream()
-        } else {
-        startStream()
-        }
-    }
 
     // Attach default on change action
     document
@@ -174,10 +145,9 @@ document.addEventListener('DOMContentLoaded', function (event) {
                 this.target.addEventListener(type, this._onHoldStart.bind(this));
             });
 
-            ["mouseup","mouseleave", "mouseout"].forEach(type => {
+            ["mouseup","mouseleave","mouseout","touchend", "touchleave","touchcancel"].forEach(type => {
                 this.target.addEventListener(type, this._onHoldEnd.bind(this));
             });
-
 
         }
 
@@ -192,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function (event) {
 
         _onHoldEnd() {
             this.isHeld = false;
-            this.callback(this.target,"0");
+            this.callback(this.target,"0"); //OJO
             clearTimeout(this.activeHoldTimeoutId);
         }
 
@@ -205,25 +175,35 @@ document.addEventListener('DOMContentLoaded', function (event) {
     const upButton =  document.getElementById("up_button");
     const leftButton =  document.getElementById("left_button");
     const downButton =  document.getElementById("down_button");
-    const myButton =  document.getElementById("right_button");
+    const rightButton =  document.getElementById("right_button");
+
+
     ClickAndHold.apply(upButton, updateMotor)
+    ClickAndHold.apply(leftButton,updateMotor)
+    ClickAndHold.apply(downButton,updateMotor)
+    ClickAndHold.apply(rightButton, updateMotor)
+
 
 
     const motorSpeed = document.getElementById("speed");
-    motorSpeed.onchange = () =>{updateMotor(motorSpeed.id, motorSpeed.value)};
+    motorSpeed.onchange = () =>{updateMotor(motorSpeed, motorSpeed.value)};
 
 
     var messageForm = document.getElementById("tts-form");
 
     messageForm.addEventListener ('submit',function(event){
+  
         event.preventDefault()
+        
         var messageTts = document.getElementById('message').value;
 
         const messageQuery = `${baseHost}/message?var=${'tts'}&val=${messageTts}`
         fetch(messageQuery)
         .then(response => {
             console.log(`request to ${messageQuery} finished, status: ${response.status}`)
-        })                
+        })  
+        
+     
         
     })
 
